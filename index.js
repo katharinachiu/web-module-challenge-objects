@@ -14,6 +14,7 @@ The function should:
   
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
+// look at pet example 
 
 function createMenuItem(/*Your code here*/){
     /*Your code here*/
@@ -48,8 +49,15 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(customer){
+    if (customer === 'student' || customer === 'teacher') {
+      return this.price*.75
+  } else if (customer === 'public'){
+    return this.price *.90
+  }
 }
+}
+console.log(burger.discount('teacher'));
 
 
 
@@ -102,8 +110,8 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
 }
 
 
